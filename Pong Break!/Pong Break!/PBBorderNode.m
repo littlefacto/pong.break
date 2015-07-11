@@ -38,7 +38,7 @@ static const CGFloat BORDER_STROKE_WIDTH = 5;
         
         self.path = [path CGPath];
         self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromPath:[path CGPath]];
-        self.physicsBody.restitution = 1.0;
+        self.physicsBody.friction = 0.0;
         self.physicsBody.categoryBitMask = BORDER_PHYSICS_CATEGORY;
         self.physicsBody.collisionBitMask = BALL_PHYSICS_CATEGORY;
         self.physicsBody.contactTestBitMask = BALL_PHYSICS_CATEGORY;
@@ -48,23 +48,6 @@ static const CGFloat BORDER_STROKE_WIDTH = 5;
     }
     
     return self;
-}
-
-static const CGFloat BORDER_VOID_WIDTH = M_PI/8;
-
-+ (NSArray * __nonnull)separatedBorder:(PBBorderNode * __nonnull)border afterImpactAtAngle:(CGFloat)angle forLevel:(NSInteger)level
-{
-    PBBorderNode *leftSide, *rightSide;
-    
-    leftSide = [[self alloc] initWithStartAngle:border.startAngle
-                                       endAngle:angle - (BORDER_VOID_WIDTH / level)
-                                       forLevel:level];
-    
-    rightSide = [[self alloc] initWithStartAngle:angle + (BORDER_VOID_WIDTH / level)
-                                        endAngle:border.endAngle
-                                        forLevel:level];
-    
-    return @[leftSide, rightSide];
 }
 
 @end

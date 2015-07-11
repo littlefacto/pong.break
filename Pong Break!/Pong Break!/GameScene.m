@@ -14,29 +14,21 @@
 
 @interface GameScene () <SKPhysicsContactDelegate>
 
+@property (nonatomic) NSInteger level;
 @property (nonatomic, strong) SKNode *ballNode;
-@property (nonatomic, strong) NSMutableArray *borders;
 
 @end
 
 @implementation GameScene
 
-#pragma mark - Properties
-
-- (NSMutableArray *)borders
-{
-    if (!_borders) {
-        _borders = [[NSMutableArray alloc] init];
-    }
-    
-    return _borders;
-}
 
 #pragma mark - SKScene
 
 -(void)didMoveToView:(SKView *)view {
+    self.level = 1;
+    
     /* Setup your scene here */
-    self.backgroundColor = [PBColorsFactory sceneBackgroundColorForLevel:0];
+    self.backgroundColor = [PBColorsFactory sceneBackgroundColorForLevel:self.level];
     self.scaleMode = SKSceneScaleModeAspectFill;
     self.anchorPoint = CGPointMake(0.5, 0.5);
     self.physicsWorld.contactDelegate = self;
@@ -49,12 +41,12 @@
     [self addChild:self.ballNode];
     
     /* Initial Boder Node */
-    SKNode *initialBorder = [PBNodesFactory completeBorderNodeForLevel:0];
+    NSArray *borderNodes = [PBNodesFactory borderNodesForLevel:self.level];
+    [borderNodes enumerateObjectsUsingBlock:^(id  __nonnull obj, NSUInteger idx, BOOL * __nonnull stop) {
+        [self addChild:obj];
+    }];
     
-    [self.borders addObject:initialBorder];
-    [self addChild:initialBorder];
-    
-    [self.ballNode.physicsBody applyImpulse:CGVectorMake(5, 5)];
+    [self.ballNode.physicsBody applyImpulse:CGVectorMake(-5, 0)];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -84,14 +76,11 @@
         secondBody = contact.bodyA;
     }
     
-    if ((firstBody.categoryBitMask & BORDER_PHYSICS_CATEGORY) != 0)
+    if (firstBody.categoryBitMask == BALL_PHYSICS_CATEGORY && secondBody.categoryBitMask == BORDER_PHYSICS_CATEGORY)
     {
+        PBBorderNode *borderNode = (PBBorderNode *)secondBody.node;
         
-    }
-    
-    if ((firstBody.categoryBitMask & BALL_PHYSICS_CATEGORY) != 0)
-    {
-        
+        [self removeChildrenInArray:@[borderNode]];
     }
 }
 

@@ -21,7 +21,8 @@ static const NSInteger BALL_WIDTH = 25;
     UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, BALL_WIDTH, BALL_WIDTH)];
     
     node.path = [path CGPath];
-    node.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:BALL_WIDTH/2];
+    node.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:BALL_WIDTH/2 center:CGPointMake(node.frame.size.width/2, node.frame.size.height/2)];
+    node.physicsBody.friction = 0.0;
     node.physicsBody.restitution = 1.0;
     node.physicsBody.linearDamping = 0.0;
     node.physicsBody.angularDamping = 0.0;
@@ -34,20 +35,21 @@ static const NSInteger BALL_WIDTH = 25;
     return node;
 }
 
-
-
-+ (SKNode *)completeBorderNodeForLevel:(NSInteger)level
++ (NSArray *)borderNodesForLevel:(NSInteger)level
 {
-    SKNode *node = [[PBBorderNode alloc] initWithStartAngle:0
-                                                endAngle:2*M_PI
-                                                forLevel:level];
+    NSMutableArray *nodes = [[NSMutableArray alloc] init];
     
-    return node;
-}
-
-+ (NSArray *)separatedBorder:(PBBorderNode *)border afterImpactAtAngle:(CGFloat)angle forLevel:(NSInteger)level
-{
-    return [PBBorderNode separatedBorder:border afterImpactAtAngle:angle forLevel:level];
+    CGFloat offset = 2*M_PI/(8*level);
+    
+    for (int i = 0; i < level * 8; i++) {
+        PBBorderNode *node = [[PBBorderNode alloc] initWithStartAngle:i*offset
+                                                             endAngle:(i+1)*offset
+                                                             forLevel:level];
+        
+        [nodes addObject:node];
+    }
+    
+    return nodes;
 }
 
 @end
