@@ -40,6 +40,7 @@
 		BF305F351B5147F5009072FA /* PBNodesFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBNodesFactory.m; sourceTree = "<group>"; };
 		BF305F371B514BD3009072FA /* PBUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBUtils.h; sourceTree = "<group>"; };
 		BF305F381B514BD3009072FA /* PBUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBUtils.m; sourceTree = "<group>"; };
+		BF305F3A1B514EE8009072FA /* PBConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBConstants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +86,7 @@
 				BF305F141B514510009072FA /* Supporting Files */,
 				BF305F371B514BD3009072FA /* PBUtils.h */,
 				BF305F381B514BD3009072FA /* PBUtils.m */,
+				BF305F3A1B514EE8009072FA /* PBConstants.h */,
 			);
 			path = "Pong Break!";
 			sourceTree = "<group>";

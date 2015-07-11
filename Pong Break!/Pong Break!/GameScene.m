@@ -11,7 +11,7 @@
 #import "PBColorsFactory.h"
 #import "PBNodesFactory.h"
 
-@interface GameScene ()
+@interface GameScene () <SKPhysicsContactDelegate>
 
 @property (nonatomic, strong) SKNode *ballNode;
 @property (nonatomic, strong) NSMutableArray *borders;
@@ -37,6 +37,7 @@
     /* Setup your scene here */
     self.backgroundColor = [PBColorsFactory sceneBackgroundColorForLevel:0];
     self.anchorPoint = CGPointMake(0.5, 0.5);
+    self.physicsWorld.contactDelegate = self;
     
     /* Ball Node */
     self.ballNode = [PBNodesFactory ballNode];
@@ -59,6 +60,13 @@
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
+}
+
+#pragma mark - SKPhysicsContactDelegate
+
+- (void)didBeginContact:(nonnull SKPhysicsContact *)contact
+{
+    NSLog(@"Contact!");
 }
 
 @end

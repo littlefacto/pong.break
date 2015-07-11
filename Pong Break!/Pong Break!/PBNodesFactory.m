@@ -8,6 +8,7 @@
 
 #import "PBNodesFactory.h"
 #import "PBColorsFactory.h"
+#import "PBConstants.h"
 
 @implementation PBNodesFactory
 
@@ -19,6 +20,9 @@ static const NSInteger BALL_WIDTH = 25;
     UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, BALL_WIDTH, BALL_WIDTH)];
     
     node.path = [path CGPath];
+    node.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:BALL_WIDTH/2];
+    node.physicsBody.categoryBitMask = BALL_PHYSICS_CATEGORY;
+    node.physicsBody.contactTestBitMask = BORDER_PHYSICS_CATEGORY;
     node.fillColor = [PBColorsFactory ballColor];
     node.strokeColor = [PBColorsFactory ballColor];
     
@@ -38,6 +42,9 @@ static const CGFloat BORDER_STROKE_WIDTH = 5;
                                                      clockwise:YES];
     
     node.path = [path CGPath];
+    node.physicsBody = [SKPhysicsBody bodyWithEdgeChainFromPath:[path CGPath]];
+    node.physicsBody.categoryBitMask = BORDER_PHYSICS_CATEGORY;
+    node.physicsBody.contactTestBitMask = BALL_PHYSICS_CATEGORY;
     node.fillColor = [SKColor clearColor];
     node.strokeColor = [PBColorsFactory borderColorForLevel:level];
     node.lineWidth = BORDER_STROKE_WIDTH;
