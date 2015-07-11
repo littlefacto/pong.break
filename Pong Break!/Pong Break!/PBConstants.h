@@ -11,5 +11,6 @@
 
 static const uint32_t BALL_PHYSICS_CATEGORY = 0x1 << 0;
 static const uint32_t BORDER_PHYSICS_CATEGORY = 0x1 << 1;
+static const uint32_t SCENE_PHYSICS_CATEGORY = 0x1 << 2;
 
 #endif /* PBConstants_h */

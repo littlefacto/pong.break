@@ -13,6 +13,6 @@
 
 + (SKColor *)sceneBackgroundColorForLevel:(NSInteger)level;
 + (SKColor *)ballColor;
-+ (SKColor *)borderColorForLevel:(NSInteger)level;
++ (SKColor *)borderColor:(BOOL)isOdd;
 
 @end

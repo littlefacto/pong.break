@@ -11,6 +11,6 @@
 @interface PBBorderNode : SKShapeNode
 
 // Designated initializer
-- (nonnull instancetype)initWithStartAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle forLevel:(NSInteger)level;
+- (nonnull instancetype)initWithStartAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle odd:(BOOL)isOdd;
 
 @end

@@ -20,9 +20,9 @@
 @implementation PBBorderNode
 
 static const CGFloat BORDER_WIDTH = 200.0;
-static const CGFloat BORDER_STROKE_WIDTH = 5;
+static const CGFloat BORDER_STROKE_WIDTH = 10;
 
-- (nonnull instancetype)initWithStartAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle forLevel:(NSInteger)level {
+- (nonnull instancetype)initWithStartAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle odd:(BOOL)isOdd {
     self = [super init];
     
     if (self) {
@@ -43,7 +43,7 @@ static const CGFloat BORDER_STROKE_WIDTH = 5;
         self.physicsBody.collisionBitMask = BALL_PHYSICS_CATEGORY;
         self.physicsBody.contactTestBitMask = BALL_PHYSICS_CATEGORY;
         self.fillColor = [SKColor clearColor];
-        self.strokeColor = [PBColorsFactory borderColorForLevel:level];
+        self.strokeColor = [PBColorsFactory borderColor:isOdd];
         self.lineWidth = BORDER_STROKE_WIDTH;
     }
     

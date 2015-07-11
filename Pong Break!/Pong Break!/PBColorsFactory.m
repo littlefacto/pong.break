@@ -12,7 +12,7 @@
 
 + (SKColor *)sceneBackgroundColorForLevel:(NSInteger)level
 {
-    return [SKColor redColor];
+    return [SKColor colorWithRed:255.0/255.0 green:96/255.0 blue:79/255.0 alpha:1.0];
 }
 
 + (SKColor *)ballColor
@@ -20,9 +20,13 @@
     return [SKColor whiteColor];
 }
 
-+ (SKColor *)borderColorForLevel:(NSInteger)level
++ (UIColor *)borderColor:(BOOL)isOdd
 {
-    return [SKColor blueColor];
+    if (isOdd) {
+        return [SKColor colorWithRed:104.0/255.0 green:102.0/255.0 blue:255.0/255.0 alpha:1.0];
+    } else {
+        return [SKColor colorWithRed:212.0/255.0 green:79.0/255.0 blue:232.0/255.0 alpha:1.0];
+    }
 }
 
 @end

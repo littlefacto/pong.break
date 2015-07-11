@@ -44,7 +44,7 @@ static const NSInteger BALL_WIDTH = 25;
     for (int i = 0; i < level * 8; i++) {
         PBBorderNode *node = [[PBBorderNode alloc] initWithStartAngle:i*offset
                                                              endAngle:(i+1)*offset
-                                                             forLevel:level];
+                                                             odd:(i % 2 != 0)];
         
         [nodes addObject:node];
     }
