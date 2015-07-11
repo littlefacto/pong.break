@@ -7,6 +7,7 @@
 //
 
 #import "GameScene.h"
+#import "PBConstants.h"
 #import "PBUtils.h"
 #import "PBColorsFactory.h"
 #import "PBNodesFactory.h"
@@ -36,8 +37,10 @@
 -(void)didMoveToView:(SKView *)view {
     /* Setup your scene here */
     self.backgroundColor = [PBColorsFactory sceneBackgroundColorForLevel:0];
+    self.scaleMode = SKSceneScaleModeAspectFill;
     self.anchorPoint = CGPointMake(0.5, 0.5);
     self.physicsWorld.contactDelegate = self;
+    self.physicsWorld.gravity = CGVectorMake(0, 0);
     
     /* Ball Node */
     self.ballNode = [PBNodesFactory ballNode];
@@ -50,6 +53,8 @@
     
     [self.borders addObject:initialBorder];
     [self addChild:initialBorder];
+    
+    [self.ballNode.physicsBody applyImpulse:CGVectorMake(5, 5)];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -66,7 +71,28 @@
 
 - (void)didBeginContact:(nonnull SKPhysicsContact *)contact
 {
-    NSLog(@"Contact!");
+    SKPhysicsBody *firstBody, *secondBody;
+    
+    if (contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask)
+    {
+        firstBody = contact.bodyA;
+        secondBody = contact.bodyB;
+    }
+    else
+    {
+        firstBody = contact.bodyB;
+        secondBody = contact.bodyA;
+    }
+    
+    if ((firstBody.categoryBitMask & BORDER_PHYSICS_CATEGORY) != 0)
+    {
+        
+    }
+    
+    if ((firstBody.categoryBitMask & BALL_PHYSICS_CATEGORY) != 0)
+    {
+        
+    }
 }
 
 @end

@@ -13,5 +13,6 @@
 
 + (SKNode *)ballNode;
 + (SKNode *)completeBorderNodeForLevel:(NSInteger)level;
++ (NSArray *)separatedBorder:(SKShapeNode *)border afterImpactAtAngle:(CGFloat)angle forLevel:(NSInteger)level;
 
 @end

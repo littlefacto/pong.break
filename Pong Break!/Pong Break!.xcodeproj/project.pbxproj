@@ -18,6 +18,7 @@
 		BF305F331B5146F0009072FA /* PBColorsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BF305F321B5146F0009072FA /* PBColorsFactory.m */; };
 		BF305F361B5147F5009072FA /* PBNodesFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BF305F351B5147F5009072FA /* PBNodesFactory.m */; };
 		BF305F391B514BD3009072FA /* PBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BF305F381B514BD3009072FA /* PBUtils.m */; };
+		BF305F3D1B515182009072FA /* PBBorderNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BF305F3C1B515182009072FA /* PBBorderNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		BF305F371B514BD3009072FA /* PBUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBUtils.h; sourceTree = "<group>"; };
 		BF305F381B514BD3009072FA /* PBUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBUtils.m; sourceTree = "<group>"; };
 		BF305F3A1B514EE8009072FA /* PBConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBConstants.h; sourceTree = "<group>"; };
+		BF305F3B1B515182009072FA /* PBBorderNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBorderNode.h; sourceTree = "<group>"; };
+		BF305F3C1B515182009072FA /* PBBorderNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBorderNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +90,7 @@
 				BF305F371B514BD3009072FA /* PBUtils.h */,
 				BF305F381B514BD3009072FA /* PBUtils.m */,
 				BF305F3A1B514EE8009072FA /* PBConstants.h */,
+				BF305F3E1B515188009072FA /* Model */,
 			);
 			path = "Pong Break!";
 			sourceTree = "<group>";
@@ -110,6 +114,15 @@
 				BF305F351B5147F5009072FA /* PBNodesFactory.m */,
 			);
 			name = Factories;
+			sourceTree = "<group>";
+		};
+		BF305F3E1B515188009072FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF305F3B1B515182009072FA /* PBBorderNode.h */,
+				BF305F3C1B515182009072FA /* PBBorderNode.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +204,7 @@
 				BF305F1C1B514510009072FA /* GameScene.m in Sources */,
 				BF305F331B5146F0009072FA /* PBColorsFactory.m in Sources */,
 				BF305F161B514510009072FA /* main.m in Sources */,
+				BF305F3D1B515182009072FA /* PBBorderNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
