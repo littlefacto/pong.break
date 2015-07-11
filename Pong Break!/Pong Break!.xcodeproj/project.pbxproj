@@ -15,6 +15,8 @@
 		BF305F241B514510009072FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF305F221B514510009072FA /* Main.storyboard */; };
 		BF305F261B514510009072FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF305F251B514510009072FA /* Assets.xcassets */; };
 		BF305F291B514510009072FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF305F271B514510009072FA /* LaunchScreen.storyboard */; };
+		BF305F331B5146F0009072FA /* PBColorsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BF305F321B5146F0009072FA /* PBColorsFactory.m */; };
+		BF305F361B5147F5009072FA /* PBNodesFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BF305F351B5147F5009072FA /* PBNodesFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,10 @@
 		BF305F251B514510009072FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF305F281B514510009072FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF305F2A1B514510009072FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF305F311B5146F0009072FA /* PBColorsFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBColorsFactory.h; sourceTree = "<group>"; };
+		BF305F321B5146F0009072FA /* PBColorsFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBColorsFactory.m; sourceTree = "<group>"; };
+		BF305F341B5147F5009072FA /* PBNodesFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBNodesFactory.h; sourceTree = "<group>"; };
+		BF305F351B5147F5009072FA /* PBNodesFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBNodesFactory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,9 +69,8 @@
 		BF305F131B514510009072FA /* Pong Break! */ = {
 			isa = PBXGroup;
 			children = (
-				BF305F171B514510009072FA /* AppDelegate.h */,
-				BF305F181B514510009072FA /* AppDelegate.m */,
 				BF305F1A1B514510009072FA /* GameScene.h */,
+				BF305F301B5146D7009072FA /* Factories */,
 				BF305F1B1B514510009072FA /* GameScene.m */,
 				BF305F1D1B514510009072FA /* GameScene.sks */,
 				BF305F1F1B514510009072FA /* GameViewController.h */,
@@ -82,9 +87,22 @@
 		BF305F141B514510009072FA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BF305F171B514510009072FA /* AppDelegate.h */,
+				BF305F181B514510009072FA /* AppDelegate.m */,
 				BF305F151B514510009072FA /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BF305F301B5146D7009072FA /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				BF305F311B5146F0009072FA /* PBColorsFactory.h */,
+				BF305F321B5146F0009072FA /* PBColorsFactory.m */,
+				BF305F341B5147F5009072FA /* PBNodesFactory.h */,
+				BF305F351B5147F5009072FA /* PBNodesFactory.m */,
+			);
+			name = Factories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,6 +136,7 @@
 				TargetAttributes = {
 					BF305F101B514510009072FA = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 2937XWQ9VF;
 					};
 				};
 			};
@@ -158,9 +177,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF305F361B5147F5009072FA /* PBNodesFactory.m in Sources */,
 				BF305F211B514510009072FA /* GameViewController.m in Sources */,
 				BF305F191B514510009072FA /* AppDelegate.m in Sources */,
 				BF305F1C1B514510009072FA /* GameScene.m in Sources */,
+				BF305F331B5146F0009072FA /* PBColorsFactory.m in Sources */,
 				BF305F161B514510009072FA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,7 +294,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Pong Break!/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.littlefacto.Pong-Break-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -284,7 +307,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Pong Break!/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.littlefacto.Pong-Break-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
