@@ -17,6 +17,7 @@
 		BF305F291B514510009072FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF305F271B514510009072FA /* LaunchScreen.storyboard */; };
 		BF305F331B5146F0009072FA /* PBColorsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BF305F321B5146F0009072FA /* PBColorsFactory.m */; };
 		BF305F361B5147F5009072FA /* PBNodesFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BF305F351B5147F5009072FA /* PBNodesFactory.m */; };
+		BF305F391B514BD3009072FA /* PBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BF305F381B514BD3009072FA /* PBUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		BF305F321B5146F0009072FA /* PBColorsFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBColorsFactory.m; sourceTree = "<group>"; };
 		BF305F341B5147F5009072FA /* PBNodesFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBNodesFactory.h; sourceTree = "<group>"; };
 		BF305F351B5147F5009072FA /* PBNodesFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBNodesFactory.m; sourceTree = "<group>"; };
+		BF305F371B514BD3009072FA /* PBUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBUtils.h; sourceTree = "<group>"; };
+		BF305F381B514BD3009072FA /* PBUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +72,8 @@
 		BF305F131B514510009072FA /* Pong Break! */ = {
 			isa = PBXGroup;
 			children = (
-				BF305F1A1B514510009072FA /* GameScene.h */,
 				BF305F301B5146D7009072FA /* Factories */,
+				BF305F1A1B514510009072FA /* GameScene.h */,
 				BF305F1B1B514510009072FA /* GameScene.m */,
 				BF305F1D1B514510009072FA /* GameScene.sks */,
 				BF305F1F1B514510009072FA /* GameViewController.h */,
@@ -80,6 +83,8 @@
 				BF305F271B514510009072FA /* LaunchScreen.storyboard */,
 				BF305F2A1B514510009072FA /* Info.plist */,
 				BF305F141B514510009072FA /* Supporting Files */,
+				BF305F371B514BD3009072FA /* PBUtils.h */,
+				BF305F381B514BD3009072FA /* PBUtils.m */,
 			);
 			path = "Pong Break!";
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF305F391B514BD3009072FA /* PBUtils.m in Sources */,
 				BF305F361B5147F5009072FA /* PBNodesFactory.m in Sources */,
 				BF305F211B514510009072FA /* GameViewController.m in Sources */,
 				BF305F191B514510009072FA /* AppDelegate.m in Sources */,

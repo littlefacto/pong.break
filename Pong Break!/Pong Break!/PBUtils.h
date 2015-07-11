@@ -1,5 +1,5 @@
 //
-//  PBNodesFactory.h
+//  PBUtils.h
 //  Pong Break!
 //
 //  Created by Vincent on 11/07/2015.
@@ -9,9 +9,8 @@
 #import <Foundation/Foundation.h>
 @import SpriteKit;
 
-@interface PBNodesFactory : NSObject
+@interface PBUtils : NSObject
 
-+ (SKNode *)ballNode;
-+ (SKNode *)completeBorderNodeForLevel:(NSInteger)level;
++ (CGPoint)centeredCoordinatesForNode:(SKNode *)node;
 
 @end
