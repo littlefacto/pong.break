@@ -11,8 +11,10 @@
 @interface PBGameManager : PBSharedInstance
 
 @property (nonatomic, readonly) NSInteger currentLevel;
+@property (nonatomic, readonly) NSInteger currentScore;
 @property (nonatomic, readonly) NSInteger bestScore;
 
+- (void)borderDestroyed;
 - (void)completedCurrentLevel;
 - (void)failedCurrentLevel;
 

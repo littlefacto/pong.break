@@ -15,12 +15,15 @@
 
 @interface GameScene () <SKPhysicsContactDelegate>
 
-@property (nonatomic, strong) SKLabelNode *labelNode;
+@property (nonatomic, strong) SKLabelNode *readyNode;
+@property (nonatomic, strong) SKLabelNode *scoreNode;
 @property (nonatomic, strong) SKNode *ballNode;
 @property (nonatomic, strong) NSMutableArray *borderNodes;
 
 @property (nonatomic) CGPoint borderSpeed;
 @property (nonatomic) CGFloat borderAngle;
+
+@property (nonatomic,getter=isGameStarted) BOOL gameStarted;
 
 @end
 
@@ -51,10 +54,11 @@
     [self setUpGameLevel:[[PBGameManager sharedInstance] currentLevel]];
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    /* Called when a touch begins */
-    
-    
+- (void)touchesBegan:(nonnull NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event
+{
+    if (![self isGameStarted]) {
+        [self lauchGame];
+    }
 }
 
 static const CGFloat DECELERATION_FACTOR = 2;
@@ -99,6 +103,9 @@ static const NSInteger GESTURE_TO_SPEED_FACTOR = 200000;
         [self removeChildrenInArray:@[borderNode]];
         [self.borderNodes removeObject:borderNode];
         
+        [[PBGameManager sharedInstance] borderDestroyed];
+        self.scoreNode.text = [NSString stringWithFormat:@"%02d", [[PBGameManager sharedInstance] currentScore]];
+        
         if ([self.borderNodes count] == 0) {
             [self levelHasBeenCompleted];
         }
@@ -130,17 +137,22 @@ static const NSInteger GESTURE_TO_SPEED_FACTOR = 200000;
     self.physicsWorld.contactDelegate = self;
     self.physicsWorld.gravity = CGVectorMake(0, 0);
     
-    self.labelNode = [SKLabelNode labelNodeWithText:[NSString stringWithFormat:@"%02d", [[PBGameManager sharedInstance] currentLevel]]];
-    self.labelNode.fontSize = 64;
-    self.labelNode.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
+    self.readyNode = [SKLabelNode labelNodeWithText:@"Touch the screen to start!"];
+    self.readyNode.fontSize = 64;
+    self.readyNode.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
+    self.readyNode.position = CGPointMake(0, self.frame.size.height/3);
     
-    [self addChild:self.labelNode];
+    [self addChild:self.readyNode];
+    
+    self.scoreNode = [SKLabelNode labelNodeWithText:[NSString stringWithFormat:@"%02d", [[PBGameManager sharedInstance] currentScore]]];
+    self.scoreNode.fontSize = 64;
+    self.scoreNode.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
+    
+    [self addChild:self.scoreNode];
 }
 
 - (void)setUpGameLevel:(NSInteger)level
-{
-    [self clearGame];
-    
+{    
     self.backgroundColor = [PBColorsFactory sceneBackgroundColor];
 
     /* Ball Node */
@@ -154,8 +166,6 @@ static const NSInteger GESTURE_TO_SPEED_FACTOR = 200000;
     [self.borderNodes enumerateObjectsUsingBlock:^(id  __nonnull obj, NSUInteger idx, BOOL * __nonnull stop) {
         [self addChild:obj];
     }];
-    
-    [self lauchGame];
 }
 
 - (void)clearGame
@@ -165,6 +175,10 @@ static const NSInteger GESTURE_TO_SPEED_FACTOR = 200000;
     }
     
     [self removeChildrenInArray:self.borderNodes];
+    
+    [self addChild:self.readyNode];
+    
+    [self setGameStarted:NO];
 }
 
 static const CGFloat INITIAL_IMPULSE = 7.5;
@@ -173,6 +187,9 @@ static const CGFloat INITIAL_IMPULSE = 7.5;
 {
     CGFloat randomAngle = ((arc4random()%RAND_MAX)/(RAND_MAX*1.0)) * (2 * M_PI);
     [self.ballNode.physicsBody applyImpulse:CGVectorMake(INITIAL_IMPULSE * cos(randomAngle), INITIAL_IMPULSE * sin(randomAngle))];
+    [self setGameStarted:YES];
+    [self removeChildrenInArray:@[self.readyNode]];
+    
 }
 
 - (void)showGameOver

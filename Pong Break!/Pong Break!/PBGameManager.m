@@ -11,6 +11,7 @@
 @interface PBGameManager ()
 
 @property (nonatomic) NSInteger currentLevel;
+@property (nonatomic) NSInteger currentScore;
 @property (nonatomic) NSInteger bestScore;
 
 @end
@@ -43,17 +44,23 @@ static NSString *BEST_SCORE_USER_DEFAULTS_KEY = @"game.manager.best.score";
     _bestScore = bestScore;
 }
 
+- (void)borderDestroyed
+{
+    self.currentScore += self.currentLevel;
+}
+
 - (void)completedCurrentLevel
 {
-    if (self.currentLevel > self.bestScore) {
-        self.bestScore = self.currentLevel;
-    }
-    
     self.currentLevel++;
 }
 
 - (void)failedCurrentLevel
 {
+    if (self.currentScore > self.bestScore) {
+        self.bestScore = self.currentScore;
+    }
+    
+    self.currentScore = 0;
     self.currentLevel = FIRST_LEVEL;
 }
 
