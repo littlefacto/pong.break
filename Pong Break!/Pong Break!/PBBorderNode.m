@@ -37,17 +37,22 @@ static const CGFloat BORDER_STROKE_WIDTH = 10;
                                                          clockwise:YES];
         
         self.path = [path CGPath];
-        self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromPath:[path CGPath]];
-        self.physicsBody.friction = 0.0;
-        self.physicsBody.categoryBitMask = BORDER_PHYSICS_CATEGORY;
-        self.physicsBody.collisionBitMask = BALL_PHYSICS_CATEGORY;
-        self.physicsBody.contactTestBitMask = BALL_PHYSICS_CATEGORY;
+        [self updatePhysicsBody];
         self.fillColor = [SKColor clearColor];
         self.strokeColor = [PBColorsFactory borderColor:isOdd];
         self.lineWidth = BORDER_STROKE_WIDTH;
     }
     
     return self;
+}
+
+- (void)updatePhysicsBody
+{
+    self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromPath:self.path];
+    self.physicsBody.friction = 0.0;
+    self.physicsBody.categoryBitMask = BORDER_PHYSICS_CATEGORY;
+    self.physicsBody.collisionBitMask = BALL_PHYSICS_CATEGORY;
+    self.physicsBody.contactTestBitMask = BALL_PHYSICS_CATEGORY;
 }
 
 @end

@@ -12,5 +12,5 @@
 
 // Designated initializer
 - (nonnull instancetype)initWithStartAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle odd:(BOOL)isOdd;
-
+- (void)updatePhysicsBody;
 @end

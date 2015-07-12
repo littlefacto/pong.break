@@ -11,7 +11,7 @@
 
 @interface PBColorsFactory : NSObject
 
-+ (SKColor *)sceneBackgroundColorForLevel:(NSInteger)level;
++ (SKColor *)sceneBackgroundColor;
 + (SKColor *)ballColor;
 + (SKColor *)borderColor:(BOOL)isOdd;
 

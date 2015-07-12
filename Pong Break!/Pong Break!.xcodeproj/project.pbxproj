@@ -18,6 +18,9 @@
 		BF305F331B5146F0009072FA /* PBColorsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BF305F321B5146F0009072FA /* PBColorsFactory.m */; };
 		BF305F361B5147F5009072FA /* PBNodesFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BF305F351B5147F5009072FA /* PBNodesFactory.m */; };
 		BF305F3D1B515182009072FA /* PBBorderNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BF305F3C1B515182009072FA /* PBBorderNode.m */; };
+		BF30D1561B529A1F00AE30B8 /* PBSharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = BF30D1551B529A1F00AE30B8 /* PBSharedInstance.m */; };
+		BF30D1591B529A4300AE30B8 /* PBGameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF30D1581B529A4300AE30B8 /* PBGameManager.m */; };
+		BF30D15F1B529D6B00AE30B8 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BF30D15E1B529D6B00AE30B8 /* GameOverScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,12 @@
 		BF305F3A1B514EE8009072FA /* PBConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBConstants.h; sourceTree = "<group>"; };
 		BF305F3B1B515182009072FA /* PBBorderNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBorderNode.h; sourceTree = "<group>"; };
 		BF305F3C1B515182009072FA /* PBBorderNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBorderNode.m; sourceTree = "<group>"; };
+		BF30D1541B529A1F00AE30B8 /* PBSharedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBSharedInstance.h; sourceTree = "<group>"; };
+		BF30D1551B529A1F00AE30B8 /* PBSharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBSharedInstance.m; sourceTree = "<group>"; };
+		BF30D1571B529A4300AE30B8 /* PBGameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBGameManager.h; sourceTree = "<group>"; };
+		BF30D1581B529A4300AE30B8 /* PBGameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBGameManager.m; sourceTree = "<group>"; };
+		BF30D15D1B529D6B00AE30B8 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
+		BF30D15E1B529D6B00AE30B8 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,10 +82,10 @@
 		BF305F131B514510009072FA /* Pong Break! */ = {
 			isa = PBXGroup;
 			children = (
+				BF30D1531B529A0C00AE30B8 /* Shared Instances */,
+				BF305F3E1B515188009072FA /* Model */,
 				BF305F301B5146D7009072FA /* Factories */,
-				BF305F1A1B514510009072FA /* GameScene.h */,
-				BF305F1B1B514510009072FA /* GameScene.m */,
-				BF305F1D1B514510009072FA /* GameScene.sks */,
+				BF30D15A1B529D2D00AE30B8 /* Scenes */,
 				BF305F1F1B514510009072FA /* GameViewController.h */,
 				BF305F201B514510009072FA /* GameViewController.m */,
 				BF305F221B514510009072FA /* Main.storyboard */,
@@ -85,7 +94,6 @@
 				BF305F2A1B514510009072FA /* Info.plist */,
 				BF305F141B514510009072FA /* Supporting Files */,
 				BF305F3A1B514EE8009072FA /* PBConstants.h */,
-				BF305F3E1B515188009072FA /* Model */,
 			);
 			path = "Pong Break!";
 			sourceTree = "<group>";
@@ -118,6 +126,29 @@
 				BF305F3C1B515182009072FA /* PBBorderNode.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		BF30D1531B529A0C00AE30B8 /* Shared Instances */ = {
+			isa = PBXGroup;
+			children = (
+				BF30D1541B529A1F00AE30B8 /* PBSharedInstance.h */,
+				BF30D1551B529A1F00AE30B8 /* PBSharedInstance.m */,
+				BF30D1571B529A4300AE30B8 /* PBGameManager.h */,
+				BF30D1581B529A4300AE30B8 /* PBGameManager.m */,
+			);
+			name = "Shared Instances";
+			sourceTree = "<group>";
+		};
+		BF30D15A1B529D2D00AE30B8 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				BF305F1A1B514510009072FA /* GameScene.h */,
+				BF305F1B1B514510009072FA /* GameScene.m */,
+				BF305F1D1B514510009072FA /* GameScene.sks */,
+				BF30D15D1B529D6B00AE30B8 /* GameOverScene.h */,
+				BF30D15E1B529D6B00AE30B8 /* GameOverScene.m */,
+			);
+			name = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,9 +223,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF30D15F1B529D6B00AE30B8 /* GameOverScene.m in Sources */,
 				BF305F361B5147F5009072FA /* PBNodesFactory.m in Sources */,
+				BF30D1591B529A4300AE30B8 /* PBGameManager.m in Sources */,
 				BF305F211B514510009072FA /* GameViewController.m in Sources */,
 				BF305F191B514510009072FA /* AppDelegate.m in Sources */,
+				BF30D1561B529A1F00AE30B8 /* PBSharedInstance.m in Sources */,
 				BF305F1C1B514510009072FA /* GameScene.m in Sources */,
 				BF305F331B5146F0009072FA /* PBColorsFactory.m in Sources */,
 				BF305F161B514510009072FA /* main.m in Sources */,
@@ -351,6 +385,7 @@
 				BF305F2F1B514510009072FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

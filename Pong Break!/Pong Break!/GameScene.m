@@ -10,9 +10,12 @@
 #import "PBConstants.h"
 #import "PBColorsFactory.h"
 #import "PBNodesFactory.h"
+#import "PBGameManager.h"
+#import "GameOverScene.h"
 
 @interface GameScene () <SKPhysicsContactDelegate>
 
+@property (nonatomic, strong) SKLabelNode *labelNode;
 @property (nonatomic, strong) SKNode *ballNode;
 @property (nonatomic, strong) NSMutableArray *borderNodes;
 
@@ -36,7 +39,7 @@
 
 #pragma mark - SKScene
 
--(void)didMoveToView:(SKView *)view {
+- (void)didMoveToView:(SKView *)view {
     UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self
                                                                                     action:@selector(handlePanGesture:)];
     
@@ -45,12 +48,10 @@
     /* Setup your scene here */
     [self setUpGameScene];
     
-    [self setUpGameLevel:1];
-    
-    [self.ballNode.physicsBody applyImpulse:CGVectorMake(-5, 0)];
+    [self setUpGameLevel:[[PBGameManager sharedInstance] currentLevel]];
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
     
     
@@ -59,7 +60,7 @@
 static const CGFloat DECELERATION_FACTOR = 2;
 static const NSInteger GESTURE_TO_SPEED_FACTOR = 200000;
 
--(void)update:(CFTimeInterval)currentTime {
+- (void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
     self.borderSpeed = CGPointMake(self.borderSpeed.x / DECELERATION_FACTOR, self.borderSpeed.y);
     self.borderAngle += self.borderSpeed.x / GESTURE_TO_SPEED_FACTOR;
@@ -70,6 +71,7 @@ static const NSInteger GESTURE_TO_SPEED_FACTOR = 200000;
         PBBorderNode *borderNode = (PBBorderNode *)obj;
         
         borderNode.path = CGPathCreateCopyByTransformingPath(borderNode.path, &transform);
+        [borderNode updatePhysicsBody];
     }];
 }
 
@@ -95,6 +97,11 @@ static const NSInteger GESTURE_TO_SPEED_FACTOR = 200000;
         PBBorderNode *borderNode = (PBBorderNode *)secondBody.node;
         
         [self removeChildrenInArray:@[borderNode]];
+        [self.borderNodes removeObject:borderNode];
+        
+        if ([self.borderNodes count] == 0) {
+            [self levelHasBeenCompleted];
+        }
     }
     
     if (firstBody.categoryBitMask == BALL_PHYSICS_CATEGORY && secondBody.categoryBitMask == SCENE_PHYSICS_CATEGORY) {
@@ -122,11 +129,19 @@ static const NSInteger GESTURE_TO_SPEED_FACTOR = 200000;
     
     self.physicsWorld.contactDelegate = self;
     self.physicsWorld.gravity = CGVectorMake(0, 0);
+    
+    self.labelNode = [SKLabelNode labelNodeWithText:[NSString stringWithFormat:@"%02d", [[PBGameManager sharedInstance] currentLevel]]];
+    self.labelNode.fontSize = 64;
+    self.labelNode.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
+    
+    [self addChild:self.labelNode];
 }
 
 - (void)setUpGameLevel:(NSInteger)level
 {
-    self.backgroundColor = [PBColorsFactory sceneBackgroundColorForLevel:level];
+    [self clearGame];
+    
+    self.backgroundColor = [PBColorsFactory sceneBackgroundColor];
 
     /* Ball Node */
     self.ballNode = [PBNodesFactory ballNode];
@@ -139,11 +154,42 @@ static const NSInteger GESTURE_TO_SPEED_FACTOR = 200000;
     [self.borderNodes enumerateObjectsUsingBlock:^(id  __nonnull obj, NSUInteger idx, BOOL * __nonnull stop) {
         [self addChild:obj];
     }];
+    
+    [self lauchGame];
+}
+
+- (void)clearGame
+{
+    if (self.ballNode) {
+        [self removeChildrenInArray:@[self.ballNode]];
+    }
+    
+    [self removeChildrenInArray:self.borderNodes];
+}
+
+static const CGFloat INITIAL_IMPULSE = 7.5;
+
+- (void)lauchGame
+{
+    CGFloat randomAngle = ((arc4random()%RAND_MAX)/(RAND_MAX*1.0)) * (2 * M_PI);
+    [self.ballNode.physicsBody applyImpulse:CGVectorMake(INITIAL_IMPULSE * cos(randomAngle), INITIAL_IMPULSE * sin(randomAngle))];
 }
 
 - (void)showGameOver
 {
-    NSLog(@"Game Over!");
+    [[PBGameManager sharedInstance] failedCurrentLevel];
+    
+    SKTransition *transition = [SKTransition fadeWithDuration:0.0];
+    GameOverScene *gameOverScene = [[GameOverScene alloc] initWithSize:self.frame.size];
+    [self.scene.view presentScene:gameOverScene transition:transition];
+}
+
+- (void)levelHasBeenCompleted
+{
+    [[PBGameManager sharedInstance] completedCurrentLevel];
+    
+    [self clearGame];
+    [self setUpGameLevel:[[PBGameManager sharedInstance] currentLevel]];
 }
 
 @end

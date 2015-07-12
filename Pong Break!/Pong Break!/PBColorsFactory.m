@@ -10,7 +10,7 @@
 
 @implementation PBColorsFactory
 
-+ (SKColor *)sceneBackgroundColorForLevel:(NSInteger)level
++ (SKColor *)sceneBackgroundColor
 {
     return [SKColor colorWithRed:255.0/255.0 green:96/255.0 blue:79/255.0 alpha:1.0];
 }
