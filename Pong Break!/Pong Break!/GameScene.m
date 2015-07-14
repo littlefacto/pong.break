@@ -144,7 +144,7 @@ static const NSInteger GESTURE_TO_SPEED_FACTOR = 200000;
     
     [self addChild:self.readyNode];
     
-    self.scoreNode = [SKLabelNode labelNodeWithText:[NSString stringWithFormat:@"%02d", [[PBGameManager sharedInstance] currentScore]]];
+    self.scoreNode = [SKLabelNode labelNodeWithText:[NSString stringWithFormat:@"%02ld", (long)[[PBGameManager sharedInstance] currentScore]]];
     self.scoreNode.fontSize = 64;
     self.scoreNode.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
     
@@ -152,7 +152,7 @@ static const NSInteger GESTURE_TO_SPEED_FACTOR = 200000;
 }
 
 - (void)setUpGameLevel:(NSInteger)level
-{    
+{
     self.backgroundColor = [PBColorsFactory sceneBackgroundColor];
 
     /* Ball Node */
