@@ -12,11 +12,13 @@
 #import "PBNodesFactory.h"
 #import "PBGameManager.h"
 #import "GameOverScene.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface GameScene () <SKPhysicsContactDelegate>
 
 @property (nonatomic, strong) SKLabelNode *readyNode;
 @property (nonatomic, strong) SKLabelNode *scoreNode;
+@property (nonatomic, strong) SKAction *breakSound;
 @property (nonatomic, strong) SKNode *ballNode;
 @property (nonatomic, strong) NSMutableArray *borderNodes;
 
@@ -105,6 +107,7 @@ static const NSInteger GESTURE_TO_SPEED_FACTOR = 200000;
         
         [[PBGameManager sharedInstance] borderDestroyed];
         self.scoreNode.text = [NSString stringWithFormat:@"%02d", [[PBGameManager sharedInstance] currentScore]];
+        [self runAction:self.breakSound];
         
         if ([self.borderNodes count] == 0) {
             [self levelHasBeenCompleted];
@@ -149,6 +152,8 @@ static const NSInteger GESTURE_TO_SPEED_FACTOR = 200000;
     self.scoreNode.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
     
     [self addChild:self.scoreNode];
+    
+    self.breakSound = [SKAction playSoundFileNamed:@"break_sound.wav" waitForCompletion:NO];
 }
 
 - (void)setUpGameLevel:(NSInteger)level
