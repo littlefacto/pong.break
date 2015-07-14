@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6214" systemVersion="14A314h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6207"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,34 +12,105 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2015 Vincent. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
-                    <rect key="frame" x="20" y="439" width="441" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pong Break!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IoM-mN-9s0">
+                    <rect key="frame" x="137" y="294" width="206" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="206" id="rfN-3L-RDK"/>
+                        <constraint firstAttribute="height" constant="47" id="xO2-DX-KG2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="36"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="rfN-3L-RDK"/>
+                            <exclude reference="xO2-DX-KG2"/>
+                        </mask>
+                    </variation>
                     <variation key="widthClass=compact">
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <mask key="constraints">
+                            <include reference="rfN-3L-RDK"/>
+                            <include reference="xO2-DX-KG2"/>
+                        </mask>
                     </variation>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pong Break" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
-                    <rect key="frame" x="20" y="140" width="441" height="43"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="©2015 Little Facto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JV5-Be-I6Z">
+                    <rect key="frame" x="166" y="452.5" width="148" height="19.5"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="4n7-hj-Ei0"/>
+                        <constraint firstAttribute="width" constant="148" id="naG-oN-IUc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="4n7-hj-Ei0"/>
+                            <exclude reference="naG-oN-IUc"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="4n7-hj-Ei0"/>
+                            <include reference="naG-oN-IUc"/>
+                        </mask>
+                    </variation>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="3FA-aq-bT1">
+                    <rect key="frame" x="89" y="8" width="303" height="303"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="271" id="WoK-RF-SsH"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="WoK-RF-SsH"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="WoK-RF-SsH"/>
+                        </mask>
+                    </variation>
+                </imageView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.84313725490196079" green="0.25882352941176473" blue="0.34901960784313724" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="bottom" multiplier="1/3" constant="1" id="Kid-kn-2rF"/>
-                <constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="Koa-jz-hwk"/>
-                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
-                <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="fvb-Df-36g"/>
+                <constraint firstItem="3FA-aq-bT1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="Bja-I7-yyj"/>
+                <constraint firstItem="IoM-mN-9s0" firstAttribute="top" secondItem="3FA-aq-bT1" secondAttribute="bottom" constant="8" symbolic="YES" id="I4s-mv-m3h"/>
+                <constraint firstItem="JV5-Be-I6Z" firstAttribute="top" secondItem="IoM-mN-9s0" secondAttribute="bottom" constant="86" id="Ql1-U2-gyv"/>
+                <constraint firstItem="3FA-aq-bT1" firstAttribute="centerX" secondItem="IoM-mN-9s0" secondAttribute="centerX" id="RxA-hv-NbJ"/>
+                <constraint firstItem="JV5-Be-I6Z" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottomMargin" id="ahX-cg-vCg"/>
+                <constraint firstItem="JV5-Be-I6Z" firstAttribute="centerX" secondItem="IoM-mN-9s0" secondAttribute="centerX" id="k3c-Gz-K0a"/>
+                <constraint firstItem="3FA-aq-bT1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="owd-6G-iPO"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Bja-I7-yyj"/>
+                    <exclude reference="RxA-hv-NbJ"/>
+                    <exclude reference="owd-6G-iPO"/>
+                    <exclude reference="I4s-mv-m3h"/>
+                    <exclude reference="Ql1-U2-gyv"/>
+                    <exclude reference="ahX-cg-vCg"/>
+                    <exclude reference="k3c-Gz-K0a"/>
+                </mask>
+            </variation>
+            <variation key="widthClass=compact">
+                <mask key="constraints">
+                    <include reference="Bja-I7-yyj"/>
+                    <include reference="RxA-hv-NbJ"/>
+                    <include reference="owd-6G-iPO"/>
+                    <include reference="I4s-mv-m3h"/>
+                    <include reference="Ql1-U2-gyv"/>
+                    <include reference="ahX-cg-vCg"/>
+                    <include reference="k3c-Gz-K0a"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="404" y="445"/>
         </view>
     </objects>
+    <resources>
+        <image name="Logo" width="256" height="256"/>
+    </resources>
 </document>

@@ -12,7 +12,7 @@
 
 + (SKColor *)sceneBackgroundColor
 {
-    return [SKColor colorWithRed:255.0/255.0 green:96/255.0 blue:79/255.0 alpha:1.0];
+    return [SKColor colorWithRed:225.0/255.0 green:91.0/255.0 blue:108.0/255.0 alpha:1.0];
 }
 
 + (SKColor *)ballColor
@@ -23,9 +23,9 @@
 + (UIColor *)borderColor:(BOOL)isOdd
 {
     if (isOdd) {
-        return [SKColor colorWithRed:104.0/255.0 green:102.0/255.0 blue:255.0/255.0 alpha:1.0];
+        return [SKColor colorWithRed:230.0/255.0 green:229.0/255.0 blue:188.0/255.0 alpha:1.0];
     } else {
-        return [SKColor colorWithRed:212.0/255.0 green:79.0/255.0 blue:232.0/255.0 alpha:1.0];
+        return [SKColor colorWithRed:53.0/255.0 green:136.0/255.0 blue:174.0/255.0 alpha:1.0];
     }
 }
 
