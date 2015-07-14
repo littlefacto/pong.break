@@ -13,7 +13,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pong Break!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IoM-mN-9s0">
-                    <rect key="frame" x="137" y="294" width="206" height="47"/>
+                    <rect key="frame" x="149" y="294" width="182.5" height="42.5"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="206" id="rfN-3L-RDK"/>
                         <constraint firstAttribute="height" constant="47" id="xO2-DX-KG2"/>
@@ -35,9 +35,11 @@
                     </variation>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="©2015 Little Facto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JV5-Be-I6Z">
-                    <rect key="frame" x="166" y="452.5" width="148" height="19.5"/>
+                    <rect key="frame" x="166" y="453" width="148" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="4n7-hj-Ei0"/>
+                        <constraint firstAttribute="width" constant="148" id="DdP-qw-iKa"/>
+                        <constraint firstAttribute="height" constant="20" id="Id4-qb-5X4"/>
                         <constraint firstAttribute="width" constant="148" id="naG-oN-IUc"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="17"/>
@@ -60,6 +62,7 @@
                     <rect key="frame" x="89" y="8" width="303" height="303"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="271" id="WoK-RF-SsH"/>
+                        <constraint firstAttribute="height" constant="303" id="psO-ch-eev"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
@@ -75,13 +78,20 @@
             </subviews>
             <color key="backgroundColor" red="0.84313725490196079" green="0.25882352941176473" blue="0.34901960784313724" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="IoM-mN-9s0" firstAttribute="top" secondItem="3FA-aq-bT1" secondAttribute="bottom" constant="-17" id="2Dn-PB-dGS"/>
+                <constraint firstItem="3FA-aq-bT1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="AE5-EI-JQK"/>
                 <constraint firstItem="3FA-aq-bT1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="Bja-I7-yyj"/>
                 <constraint firstItem="IoM-mN-9s0" firstAttribute="top" secondItem="3FA-aq-bT1" secondAttribute="bottom" constant="8" symbolic="YES" id="I4s-mv-m3h"/>
+                <constraint firstItem="3FA-aq-bT1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="89" id="NrL-ol-uxR"/>
+                <constraint firstAttribute="bottom" secondItem="JV5-Be-I6Z" secondAttribute="bottom" constant="7" id="PKB-HD-zKt"/>
                 <constraint firstItem="JV5-Be-I6Z" firstAttribute="top" secondItem="IoM-mN-9s0" secondAttribute="bottom" constant="86" id="Ql1-U2-gyv"/>
                 <constraint firstItem="3FA-aq-bT1" firstAttribute="centerX" secondItem="IoM-mN-9s0" secondAttribute="centerX" id="RxA-hv-NbJ"/>
                 <constraint firstItem="JV5-Be-I6Z" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottomMargin" id="ahX-cg-vCg"/>
+                <constraint firstItem="JV5-Be-I6Z" firstAttribute="centerX" secondItem="IoM-mN-9s0" secondAttribute="centerX" id="hRI-BI-UHW"/>
                 <constraint firstItem="JV5-Be-I6Z" firstAttribute="centerX" secondItem="IoM-mN-9s0" secondAttribute="centerX" id="k3c-Gz-K0a"/>
                 <constraint firstItem="3FA-aq-bT1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="owd-6G-iPO"/>
+                <constraint firstItem="JV5-Be-I6Z" firstAttribute="centerX" secondItem="3FA-aq-bT1" secondAttribute="centerX" id="suE-hP-G80"/>
+                <constraint firstItem="JV5-Be-I6Z" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="unO-Pb-oUW"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
