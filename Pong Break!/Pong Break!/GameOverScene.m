@@ -11,6 +11,12 @@
 #import "PBColorsFactory.h"
 #import "PBGameManager.h"
 
+@interface GameOverScene ()
+
+@property (nonatomic, strong) SKAction *gameOverSound;
+
+@end
+
 @implementation GameOverScene
 
 #pragma mark - SKScene
@@ -89,6 +95,10 @@ static NSString *TRY_GAIN_BUTTON_NAME = @"tryAgainButton";
     tryAgainLabelNode.position = CGPointMake(0, 0);
     
     [self addChild:tryAgainLabelNode];
+    
+    self.gameOverSound = [SKAction playSoundFileNamed:@"gameover_sound.wav" waitForCompletion:NO];
+    
+    [self runAction:self.gameOverSound];
 }
 
 - (void)startNewGame

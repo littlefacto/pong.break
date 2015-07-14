@@ -19,6 +19,7 @@
 @property (nonatomic, strong) SKLabelNode *readyNode;
 @property (nonatomic, strong) SKLabelNode *scoreNode;
 @property (nonatomic, strong) SKAction *breakSound;
+@property (nonatomic, strong) SKAction *levelCompleteSound;
 @property (nonatomic, strong) SKNode *ballNode;
 @property (nonatomic, strong) NSMutableArray *borderNodes;
 
@@ -208,6 +209,7 @@ static const CGFloat INITIAL_IMPULSE = 7.5;
 
 - (void)levelHasBeenCompleted
 {
+    [self runAction:self.levelCompleteSound];
     [[PBGameManager sharedInstance] completedCurrentLevel];
     
     [self clearGame];
