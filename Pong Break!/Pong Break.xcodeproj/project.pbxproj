@@ -1,0 +1,415 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF2E0F7C1B55957B008FD19E /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2E0F7B1B55957B008FD19E /* iTunesArtwork@2x.png */; };
+		BF305F161B514510009072FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF305F151B514510009072FA /* main.m */; };
+		BF305F191B514510009072FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF305F181B514510009072FA /* AppDelegate.m */; };
+		BF305F1C1B514510009072FA /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BF305F1B1B514510009072FA /* GameScene.m */; };
+		BF305F1E1B514510009072FA /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF305F1D1B514510009072FA /* GameScene.sks */; };
+		BF305F211B514510009072FA /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF305F201B514510009072FA /* GameViewController.m */; };
+		BF305F241B514510009072FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF305F221B514510009072FA /* Main.storyboard */; };
+		BF305F261B514510009072FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF305F251B514510009072FA /* Assets.xcassets */; };
+		BF305F331B5146F0009072FA /* PBColorsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BF305F321B5146F0009072FA /* PBColorsFactory.m */; };
+		BF305F361B5147F5009072FA /* PBNodesFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BF305F351B5147F5009072FA /* PBNodesFactory.m */; };
+		BF305F3D1B515182009072FA /* PBBorderNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BF305F3C1B515182009072FA /* PBBorderNode.m */; };
+		BF30D1561B529A1F00AE30B8 /* PBSharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = BF30D1551B529A1F00AE30B8 /* PBSharedInstance.m */; };
+		BF30D1591B529A4300AE30B8 /* PBGameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF30D1581B529A4300AE30B8 /* PBGameManager.m */; };
+		BF30D15F1B529D6B00AE30B8 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BF30D15E1B529D6B00AE30B8 /* GameOverScene.m */; };
+		BF4F9D561B5517ED0084D5EE /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4F9D551B5517ED0084D5EE /* Launch Screen.xib */; };
+		BFC14BCE1B54FBCA00EF966D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC14BCD1B54FBCA00EF966D /* AVFoundation.framework */; };
+		BFC14BD01B54FCF200EF966D /* break_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = BFC14BCF1B54FCF200EF966D /* break_sound.wav */; };
+		BFC14BD71B55000E00EF966D /* gameover_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = BFC14BD51B55000E00EF966D /* gameover_sound.wav */; };
+		BFC14BD81B55000E00EF966D /* levelcomplete_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = BFC14BD61B55000E00EF966D /* levelcomplete_sound.wav */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BF2E0F7B1B55957B008FD19E /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		BF305F111B514510009072FA /* Pong Break.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pong Break.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF305F151B514510009072FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BF305F171B514510009072FA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BF305F181B514510009072FA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BF305F1A1B514510009072FA /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		BF305F1B1B514510009072FA /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		BF305F1D1B514510009072FA /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		BF305F1F1B514510009072FA /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		BF305F201B514510009072FA /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		BF305F231B514510009072FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BF305F251B514510009072FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF305F2A1B514510009072FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF305F311B5146F0009072FA /* PBColorsFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBColorsFactory.h; sourceTree = "<group>"; };
+		BF305F321B5146F0009072FA /* PBColorsFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBColorsFactory.m; sourceTree = "<group>"; };
+		BF305F341B5147F5009072FA /* PBNodesFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBNodesFactory.h; sourceTree = "<group>"; };
+		BF305F351B5147F5009072FA /* PBNodesFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBNodesFactory.m; sourceTree = "<group>"; };
+		BF305F3A1B514EE8009072FA /* PBConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBConstants.h; sourceTree = "<group>"; };
+		BF305F3B1B515182009072FA /* PBBorderNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBorderNode.h; sourceTree = "<group>"; };
+		BF305F3C1B515182009072FA /* PBBorderNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBorderNode.m; sourceTree = "<group>"; };
+		BF30D1541B529A1F00AE30B8 /* PBSharedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBSharedInstance.h; sourceTree = "<group>"; };
+		BF30D1551B529A1F00AE30B8 /* PBSharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBSharedInstance.m; sourceTree = "<group>"; };
+		BF30D1571B529A4300AE30B8 /* PBGameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBGameManager.h; sourceTree = "<group>"; };
+		BF30D1581B529A4300AE30B8 /* PBGameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBGameManager.m; sourceTree = "<group>"; };
+		BF30D15D1B529D6B00AE30B8 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
+		BF30D15E1B529D6B00AE30B8 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
+		BF4F9D551B5517ED0084D5EE /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
+		BFC14BCD1B54FBCA00EF966D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BFC14BCF1B54FCF200EF966D /* break_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = break_sound.wav; sourceTree = "<group>"; };
+		BFC14BD51B55000E00EF966D /* gameover_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameover_sound.wav; sourceTree = "<group>"; };
+		BFC14BD61B55000E00EF966D /* levelcomplete_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = levelcomplete_sound.wav; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF305F0E1B514510009072FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFC14BCE1B54FBCA00EF966D /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BF305F081B514510009072FA = {
+			isa = PBXGroup;
+			children = (
+				BF305F131B514510009072FA /* Pong Break! */,
+				BF305F121B514510009072FA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BF305F121B514510009072FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF305F111B514510009072FA /* Pong Break.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF305F131B514510009072FA /* Pong Break! */ = {
+			isa = PBXGroup;
+			children = (
+				BF30D1531B529A0C00AE30B8 /* Shared Instances */,
+				BF305F3E1B515188009072FA /* Model */,
+				BF305F301B5146D7009072FA /* Factories */,
+				BF30D15A1B529D2D00AE30B8 /* Scenes */,
+				BF305F1F1B514510009072FA /* GameViewController.h */,
+				BF305F201B514510009072FA /* GameViewController.m */,
+				BF305F221B514510009072FA /* Main.storyboard */,
+				BF4F9D551B5517ED0084D5EE /* Launch Screen.xib */,
+				BF305F251B514510009072FA /* Assets.xcassets */,
+				BF305F2A1B514510009072FA /* Info.plist */,
+				BFC14BC81B54F99300EF966D /* Ressources */,
+				BF305F141B514510009072FA /* Supporting Files */,
+				BF305F3A1B514EE8009072FA /* PBConstants.h */,
+			);
+			path = "Pong Break!";
+			sourceTree = "<group>";
+		};
+		BF305F141B514510009072FA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BF305F171B514510009072FA /* AppDelegate.h */,
+				BF305F181B514510009072FA /* AppDelegate.m */,
+				BF305F151B514510009072FA /* main.m */,
+				BFC14BCD1B54FBCA00EF966D /* AVFoundation.framework */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BF305F301B5146D7009072FA /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				BF305F311B5146F0009072FA /* PBColorsFactory.h */,
+				BF305F321B5146F0009072FA /* PBColorsFactory.m */,
+				BF305F341B5147F5009072FA /* PBNodesFactory.h */,
+				BF305F351B5147F5009072FA /* PBNodesFactory.m */,
+			);
+			name = Factories;
+			sourceTree = "<group>";
+		};
+		BF305F3E1B515188009072FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF305F3B1B515182009072FA /* PBBorderNode.h */,
+				BF305F3C1B515182009072FA /* PBBorderNode.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		BF30D1531B529A0C00AE30B8 /* Shared Instances */ = {
+			isa = PBXGroup;
+			children = (
+				BF30D1541B529A1F00AE30B8 /* PBSharedInstance.h */,
+				BF30D1551B529A1F00AE30B8 /* PBSharedInstance.m */,
+				BF30D1571B529A4300AE30B8 /* PBGameManager.h */,
+				BF30D1581B529A4300AE30B8 /* PBGameManager.m */,
+			);
+			name = "Shared Instances";
+			sourceTree = "<group>";
+		};
+		BF30D15A1B529D2D00AE30B8 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				BF305F1A1B514510009072FA /* GameScene.h */,
+				BF305F1B1B514510009072FA /* GameScene.m */,
+				BF305F1D1B514510009072FA /* GameScene.sks */,
+				BF30D15D1B529D6B00AE30B8 /* GameOverScene.h */,
+				BF30D15E1B529D6B00AE30B8 /* GameOverScene.m */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		BFC14BC81B54F99300EF966D /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				BF2E0F7B1B55957B008FD19E /* iTunesArtwork@2x.png */,
+				BFC14BCF1B54FCF200EF966D /* break_sound.wav */,
+				BFC14BD51B55000E00EF966D /* gameover_sound.wav */,
+				BFC14BD61B55000E00EF966D /* levelcomplete_sound.wav */,
+			);
+			name = Ressources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BF305F101B514510009072FA /* Pong Break */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF305F2D1B514510009072FA /* Build configuration list for PBXNativeTarget "Pong Break" */;
+			buildPhases = (
+				BF305F0D1B514510009072FA /* Sources */,
+				BF305F0E1B514510009072FA /* Frameworks */,
+				BF305F0F1B514510009072FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pong Break";
+			productName = "Pong Break!";
+			productReference = BF305F111B514510009072FA /* Pong Break.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF305F091B514510009072FA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Vincent;
+				TargetAttributes = {
+					BF305F101B514510009072FA = {
+						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = DG6DDPED4N;
+					};
+				};
+			};
+			buildConfigurationList = BF305F0C1B514510009072FA /* Build configuration list for PBXProject "Pong Break" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BF305F081B514510009072FA;
+			productRefGroup = BF305F121B514510009072FA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF305F101B514510009072FA /* Pong Break */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF305F0F1B514510009072FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFC14BD81B55000E00EF966D /* levelcomplete_sound.wav in Resources */,
+				BFC14BD01B54FCF200EF966D /* break_sound.wav in Resources */,
+				BF305F1E1B514510009072FA /* GameScene.sks in Resources */,
+				BF2E0F7C1B55957B008FD19E /* iTunesArtwork@2x.png in Resources */,
+				BF305F261B514510009072FA /* Assets.xcassets in Resources */,
+				BFC14BD71B55000E00EF966D /* gameover_sound.wav in Resources */,
+				BF4F9D561B5517ED0084D5EE /* Launch Screen.xib in Resources */,
+				BF305F241B514510009072FA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF305F0D1B514510009072FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF30D15F1B529D6B00AE30B8 /* GameOverScene.m in Sources */,
+				BF305F361B5147F5009072FA /* PBNodesFactory.m in Sources */,
+				BF30D1591B529A4300AE30B8 /* PBGameManager.m in Sources */,
+				BF305F211B514510009072FA /* GameViewController.m in Sources */,
+				BF305F191B514510009072FA /* AppDelegate.m in Sources */,
+				BF30D1561B529A1F00AE30B8 /* PBSharedInstance.m in Sources */,
+				BF305F1C1B514510009072FA /* GameScene.m in Sources */,
+				BF305F331B5146F0009072FA /* PBColorsFactory.m in Sources */,
+				BF305F161B514510009072FA /* main.m in Sources */,
+				BF305F3D1B515182009072FA /* PBBorderNode.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BF305F221B514510009072FA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF305F231B514510009072FA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BF305F2B1B514510009072FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BF305F2C1B514510009072FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BF305F2E1B514510009072FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Pong Break!/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.littlefacto.PongBreak;
+				PRODUCT_NAME = "Pong Break";
+			};
+			name = Debug;
+		};
+		BF305F2F1B514510009072FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Pong Break!/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.littlefacto.PongBreak;
+				PRODUCT_NAME = "Pong Break";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF305F0C1B514510009072FA /* Build configuration list for PBXProject "Pong Break" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF305F2B1B514510009072FA /* Debug */,
+				BF305F2C1B514510009072FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF305F2D1B514510009072FA /* Build configuration list for PBXNativeTarget "Pong Break" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF305F2E1B514510009072FA /* Debug */,
+				BF305F2F1B514510009072FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BF305F091B514510009072FA /* Project object */;
+}
