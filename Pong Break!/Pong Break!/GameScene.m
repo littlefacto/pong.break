@@ -141,14 +141,16 @@ static const NSInteger GESTURE_TO_SPEED_FACTOR = 200000;
     self.physicsWorld.contactDelegate = self;
     self.physicsWorld.gravity = CGVectorMake(0, 0);
     
-    self.readyNode = [SKLabelNode labelNodeWithText:@"Touch the screen to start!"];
-    self.readyNode.fontSize = 64;
+    self.readyNode = [[SKLabelNode alloc] initWithFontNamed:@"HelveticaNeue-UltraLight"];
+    self.readyNode.text = @"Touch the screen to start!";
+    self.readyNode.fontSize = 40;
     self.readyNode.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
     self.readyNode.position = CGPointMake(0, self.frame.size.height/3);
     
     [self addChild:self.readyNode];
     
-    self.scoreNode = [SKLabelNode labelNodeWithText:[NSString stringWithFormat:@"%02ld", (long)[[PBGameManager sharedInstance] currentScore]]];
+    self.scoreNode = [[SKLabelNode alloc] initWithFontNamed:@"HelveticaNeue-UltraLight"];
+    self.scoreNode.text = [NSString stringWithFormat:@"%02ld", (long)[[PBGameManager sharedInstance] currentScore]];
     self.scoreNode.fontSize = 64;
     self.scoreNode.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
     

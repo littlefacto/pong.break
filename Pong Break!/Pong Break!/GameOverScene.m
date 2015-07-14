@@ -73,22 +73,24 @@ static NSString *TRY_GAIN_BUTTON_NAME = @"tryAgainButton";
     self.backgroundColor = [PBColorsFactory sceneBackgroundColor];
     
     
-    SKLabelNode *mainTextLabelNode = [SKLabelNode labelNodeWithText:@"Game Over!"];
+    SKLabelNode *mainTextLabelNode = [[SKLabelNode alloc] initWithFontNamed:@"HelveticaNeue-UltraLight"];
+    mainTextLabelNode.text = @"Game Over!";
     mainTextLabelNode.fontSize = 64;
     mainTextLabelNode.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
     mainTextLabelNode.position = CGPointMake(0, self.frame.size.height/4);
     
     [self addChild:mainTextLabelNode];
     
-    NSString *bestScoreText = [NSString stringWithFormat:@"Best Score: %d", [[PBGameManager sharedInstance] bestScore]];
-    SKLabelNode *bestScoreLabelNode = [SKLabelNode labelNodeWithText:bestScoreText];
+    SKLabelNode *bestScoreLabelNode = [[SKLabelNode alloc] initWithFontNamed:@"HelveticaNeue-UltraLight"];
+    bestScoreLabelNode.text = [NSString stringWithFormat:@"Best Score: %d", [[PBGameManager sharedInstance] bestScore]];
     bestScoreLabelNode.fontSize = 64;
     bestScoreLabelNode.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
     bestScoreLabelNode.position = CGPointMake(0, self.frame.size.height/4 - mainTextLabelNode.frame.size.height - 12);
     
     [self addChild:bestScoreLabelNode];
     
-    SKLabelNode *tryAgainLabelNode = [SKLabelNode labelNodeWithText:@"Try Again?"];
+    SKLabelNode *tryAgainLabelNode = [[SKLabelNode alloc] initWithFontNamed:@"HelveticaNeue-UltraLight"];
+    tryAgainLabelNode.text = @"Try Again?";
     tryAgainLabelNode.name = TRY_GAIN_BUTTON_NAME;
     tryAgainLabelNode.fontSize = 64;
     tryAgainLabelNode.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
