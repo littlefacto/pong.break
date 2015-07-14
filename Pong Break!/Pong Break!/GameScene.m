@@ -64,14 +64,8 @@
     }
 }
 
-static const CGFloat DECELERATION_FACTOR = 2;
-static const NSInteger GESTURE_TO_SPEED_FACTOR = 200000;
-
 - (void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
-    self.borderSpeed = CGPointMake(self.borderSpeed.x / DECELERATION_FACTOR, self.borderSpeed.y);
-    self.borderAngle += self.borderSpeed.x / GESTURE_TO_SPEED_FACTOR;
-    
     CGAffineTransform transform = CGAffineTransformMakeRotation(self.borderAngle);
     
     [self.borderNodes enumerateObjectsUsingBlock:^(id  __nonnull obj, NSUInteger idx, BOOL * __nonnull stop) {
@@ -122,9 +116,14 @@ static const NSInteger GESTURE_TO_SPEED_FACTOR = 200000;
 
 #pragma mark - UIPanGestureRecognizer
 
+static const NSInteger GESTURE_TO_SPEED_FACTOR = 2000;
+
+
 - (void)handlePanGesture:(UIPanGestureRecognizer *)gesture
 {
     self.borderSpeed = [gesture velocityInView:self.view];
+    self.borderAngle += [gesture translationInView:self.view].x / GESTURE_TO_SPEED_FACTOR;
+    [gesture setTranslation:CGPointZero inView:self.view];
 }
 
 #pragma mark - Private Methods
