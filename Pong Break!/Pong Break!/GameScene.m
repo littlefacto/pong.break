@@ -57,7 +57,7 @@
     [self setUpGameLevel:[[PBGameManager sharedInstance] currentLevel]];
 }
 
-- (void)touchesBegan:(nonnull NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event
+- (void)touchesBegan:(nonnull NSSet *)touches withEvent:(nullable UIEvent *)event
 {
     if (![self isGameStarted]) {
         [self lauchGame];

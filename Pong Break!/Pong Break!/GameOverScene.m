@@ -28,7 +28,7 @@
 
 static NSString *TRY_GAIN_BUTTON_NAME = @"tryAgainButton";
 
-- (void)touchesBegan:(nonnull NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event
+- (void)touchesBegan:(nonnull NSSet *)touches withEvent:(nullable UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
     CGPoint touchPoint = [touch locationInNode:self];
@@ -40,7 +40,7 @@ static NSString *TRY_GAIN_BUTTON_NAME = @"tryAgainButton";
     }
 }
 
-- (void)touchesCancelled:(nullable NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event
+- (void)touchesCancelled:(nullable NSSet *)touches withEvent:(nullable UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
     CGPoint touchPoint = [touch locationInNode:self];
@@ -52,7 +52,7 @@ static NSString *TRY_GAIN_BUTTON_NAME = @"tryAgainButton";
     }
 }
 
-- (void)touchesEnded:(nonnull NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event
+- (void)touchesEnded:(nonnull NSSet *)touches withEvent:(nullable UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
     CGPoint touchPoint = [touch locationInNode:self];
