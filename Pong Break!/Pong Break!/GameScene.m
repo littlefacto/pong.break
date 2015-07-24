@@ -16,6 +16,8 @@
 
 @interface GameScene () <SKPhysicsContactDelegate>
 
+@property (nonatomic, strong) UIPanGestureRecognizer* panGesture;
+
 @property (nonatomic, strong) SKLabelNode *readyNode;
 @property (nonatomic, strong) SKLabelNode *scoreNode;
 @property (nonatomic, strong) SKAction *breakSound;
@@ -46,10 +48,10 @@
 #pragma mark - SKScene
 
 - (void)didMoveToView:(SKView *)view {
-    UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self
-                                                                                    action:@selector(handlePanGesture:)];
+    self.panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self
+                                                              action:@selector(handlePanGesture:)];
     
-    [self.view addGestureRecognizer:panRecognizer];
+    [self.view addGestureRecognizer:self.panGesture];
     
     /* Setup your scene here */
     [self setUpGameScene];
@@ -97,15 +99,17 @@
     {
         PBBorderNode *borderNode = (PBBorderNode *)secondBody.node;
         
-        [self removeChildrenInArray:@[borderNode]];
-        [self.borderNodes removeObject:borderNode];
-        
-        [[PBGameManager sharedInstance] borderDestroyed];
-        self.scoreNode.text = [NSString stringWithFormat:@"%02d", [[PBGameManager sharedInstance] currentScore]];
-        [self runAction:self.breakSound];
-        
-        if ([self.borderNodes count] == 0) {
-            [self levelHasBeenCompleted];
+        if (borderNode) {
+            [self removeChildrenInArray:@[borderNode]];
+            [self.borderNodes removeObject:borderNode];
+            
+            [[PBGameManager sharedInstance] borderDestroyed];
+            self.scoreNode.text = [NSString stringWithFormat:@"%02d", [[PBGameManager sharedInstance] currentScore]];
+            [self runAction:self.breakSound];
+            
+            if ([self.borderNodes count] == 0) {
+                [self levelHasBeenCompleted];
+            }
         }
     }
     
@@ -201,6 +205,7 @@ static const CGFloat INITIAL_IMPULSE = 7.5;
 
 - (void)showGameOver
 {
+    [self.view removeGestureRecognizer:self.panGesture];
     [[PBGameManager sharedInstance] failedCurrentLevel];
     
     SKTransition *transition = [SKTransition fadeWithDuration:0.0];
